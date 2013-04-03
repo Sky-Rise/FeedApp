@@ -1,0 +1,141 @@
+// ============================================================================
+// (c) SkyRise        |  Software Development Team
+// ----------------------------------------------------------------------------
+// @ Popa Ștefan      |  march 28, 2013 
+// ============================================================================
+
+// ============================================================================
+   @import "/graphicCore/lib/lessLib/mainLib.less";
+// ============================================================================
+// base ->
+// ----------------------------------------------------------------------------
+#mainContentDiv
+{
+	width: 100%;
+	height: auto;
+	margin: 100px auto;
+	border: 1px #000 solid;
+	//border-radius: 10px;
+}
+// ----------------------------------------------------------------------------
+
+.articleBox
+{
+//  -------------------+
+	float              : left;
+	margin-top         : 10px;
+	margin-left        : 10px;
+//  -------------------+
+	height      	   : auto;
+	width 			   : 270px;    
+	background 		   : #fff;
+	position 		   : relative;
+	.roundAllCorners();
+	overflow            : visible;
+	-webkit-box-shadow : 0 1px 4px rgba(0, 0, 0, 0.3), 
+						 0 0 60px rgba(0, 0, 0, 0.1) inset;
+	   -moz-box-shadow : 0 1px 4px rgba(0, 0, 0, 0.3), 
+	   					 0 0 40px rgba(0, 0, 0, 0.1) inset;
+			box-shadow : 0 1px 4px rgba(0, 0, 0, 0.3), 
+						 0 0 40px rgba(0, 0, 0, 0.1) inset;
+//  -------------------+
+}
+
+.articleBox:before,
+.articleBox:after 
+{
+//  -------------------+
+	content            : "";
+ 	position 		   : absolute; 
+ 	z-index 		   : -2;
+	bottom 			   : 15px;
+    left 			   : 10px;
+    width 			   : 50%;
+    height	      	   : 20%;
+    max-width 		   : 300px;
+    -webkit-box-shadow : 0 15px 10px rgba(0, 0, 0, 0.7);   
+       -moz-box-shadow : 0 15px 10px rgba(0, 0, 0, 0.7);
+    		box-shadow : 0 15px 10px rgba(0, 0, 0, 0.7);
+    -webkit-transform  : rotate(-3deg);    
+       -moz-transform  : rotate(-3deg);   
+    	-ms-transform  : rotate(-3deg);   
+    	 -o-transform  : rotate(-3deg);
+    		transform  : rotate(-3deg);
+//  -------------------+
+}
+
+.articleBox:after 
+{
+//  -------------------+
+	right              : 10px; 
+	left               : auto;
+	-webkit-transform  : rotate(3deg);   
+	   -moz-transform  : rotate(3deg);  
+		-ms-transform  : rotate(3deg);  
+		 -o-transform  : rotate(3deg);
+			transform  : rotate(3deg);
+//  -------------------+
+}
+
+.articleContent
+{
+//  -------------------+
+	height      	   : auto;
+	width 			   : 270px;   
+	background 		   : #414141;
+	margin:0;
+	padding: 0;
+	.roundAllCorners();
+//  -------------------+
+}
+
+.articleImg
+{
+//  -------------------+
+	height      	   : 200px;
+	width 			   : 270px;   
+	background 		   : #e2e2e2;
+	margin             : 0;
+	padding            : 0;
+	.roundTopCorners();
+//  -------------------+
+}
+
+.articleText
+{
+//  -------------------+
+	height      	   : auto;
+	width 			   : 270px;   
+	background 		   : none;
+	margin             : 0;
+	padding            : 0;
+	.roundButtomCorners();
+	background 		   : #fff;
+	overflow            : hidden;
+	-webkit-box-shadow : 0 0 20px rgba(0, 0, 0, 0.2) inset;
+	   -moz-box-shadow : 0 0 20px rgba(0, 0, 0, 0.2) inset;
+			box-shadow : 0 0 20px rgba(0, 0, 0, 0.2) inset;
+
+//  -------------------+
+    p{
+	    font-size      : 12px;
+	    margin         : 0;
+	    padding        : 0px 10px 10px 10px ;
+	    .paragraph();
+	    
+    }
+	// ----------------+
+    h1{
+    	margin         : 0;
+    	padding        : 10px;
+        .headLine();
+    }
+//  -------------------+
+}
+
+// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------

@@ -1,0 +1,316 @@
+// =============================================================================
+// | (c) SkyRise        |  - Software Development Team
+// -----------------------------------------------------------------------------
+// | @ Popa Ștefan      |  - March 26, 2013
+// | Info               |  - 
+// =============================================================================
+
+// ============================================================================
+   @import "/graphicCore/lib/lessLib/mainLib.less";
+// ============================================================================
+
+// backgrounds ->
+// -----------------------------------------------------------------------------
+// -----------------------+  
+   @noiseGrayBackground   : '@{gfxFolder}bg.png';
+   @noiseMainMenuBg       : '@{gfxFolder}mainMenuBg.png';
+   @subMainMenuBg 		  : '@{gfxFolder}subMenuBg2.png';
+   @mainMenuSprite        : '@{gfxFolder}mainMenuSprite.png';
+   @mainWoodenBg          : '@{gfxFolder}woodenBg.jpg';
+   @searchFieldSprite     : '@{gfxFolder}searchFieldSprite.png';
+// -----------------------+
+// -----------------------------------------------------------------------------
+// dimensions ->
+// -----------------------------+
+   @mainMenuHeight              : 53px;
+   @mainHiddenSubmenuHeight     : 200px;
+   @leftRightBtnsDivDistance    : 36px;
+   @middleDivWidth              : 200px;
+// -----------------------------+
+// -----------------------------------------------------------------------------
+
+
+body {
+//  ------------+
+	background  : url(@mainWoodenBg) repeat;
+	min-width   : 768px;
+//  ------------+	
+    .setMarginAndPaddingDistance(0);
+     }
+ 
+header{
+	   .setMarginAndPaddingDistance(0);
+      }
+#menu
+{
+//  ------------+
+	width       : 100%;
+	height      : auto;
+	margin      : 0;
+	padding     : 0;
+	top         : 0;
+	position    : absolute;
+	z-index     : 999999;
+	min-width   : 768px;
+//  ------------+
+}   
+         
+#mainMenu 
+{
+//  -------------------+
+	background         : url(@noiseMainMenuBg) repeat-x;
+	width              : 100%;
+	height             : @mainMenuHeight;
+	position           : relative;
+	-webkit-box-shadow : 2px 2px 10px rgba(0, 0, 0, 0.3), 
+	                     0 0 60px rgba(0, 0, 0, 0.1) inset;
+	   -moz-box-shadow : 2px 2px 10px rgba(0, 0, 0, 0.3), 
+	                     0 0 60px rgba(0, 0, 0, 0.1) inset;
+	        box-shadow : 0px 2px 6px rgba(0,0,0,0.8), 
+	                     0 2px 6px rgba(0, 0, 0, 0.8) inset;
+//  -------------------+
+	.setMarginAndPaddingDistance(0);
+} 
+
+#hiddenSubmenu 
+{
+//  ------------+
+	display     : none;
+    height      : @mainHiddenSubmenuHeight;
+    width       : 100%;
+    background  : url(@subMainMenuBg) repeat-x;
+    color       : white;
+//  ------------+
+}      
+ 
+#left-element 
+{
+//  ------------+
+  	position    : absolute;
+  	left        : @leftRightBtnsDivDistance;
+  	top         : 0px;
+  	width       : auto;
+    height      : @mainMenuHeight;
+//  ------------+
+}
+
+#middle-element 
+{
+//  ------------+
+  	margin 		: 0px auto;
+  	width		: @middleDivWidth;
+  	height		: @mainMenuHeight;
+	//background  : #ddd;
+//  ------------+
+}
+
+#right-element 
+{
+//  ------------+
+  	position    : absolute;
+  	right       : @leftRightBtnsDivDistance;
+    top         : 0px;
+ 	width       : auto;
+	height      : @mainMenuHeight;
+//  ------------+
+}
+
+.menuItem(@width :64px,@heigth :53px) 
+{
+//  ------------+
+	display     : inline-block;
+	position    : relative;
+	width       : @width;
+	height      : @heigth;
+//  ------------+
+}
+
+#homeMI
+{
+//  ------------+
+	.menuItem();
+	background  : url(@mainMenuSprite) no-repeat 0px 0px;
+//  ------------+
+}	
+
+#userMI
+{
+//  ------------+
+	.menuItem();
+	background  : url(@mainMenuSprite) no-repeat 0px -53px;
+//  ------------+
+}	
+	
+#settingsMI
+{
+//  ------------+
+	.menuItem();
+	background  : url(@mainMenuSprite) no-repeat 0px -106px;
+//  ------------+
+}
+	
+#refreshMI
+{
+//  ------------+
+	.menuItem();
+	background  : url(@mainMenuSprite) no-repeat -64px 0px;
+//  ------------+
+}
+	
+#mooreMI
+{
+//  ------------+
+	.menuItem();
+//  ------------+	
+}
+	
+#PImg
+{
+//  ------------+
+    margin      : 14px auto;
+    background  : url(@mainMenuSprite) no-repeat -18px -175px;
+	width       : 28px;
+	height      : 28px;
+//  ------------+	
+}	
+					
+		
+.menuItem span 
+{
+//  ------------+
+	position    : absolute;
+	top         : 2px; 
+	left        : 0; 
+	bottom      : 0; 
+	right       : 0;
+	background  : url(@mainMenuSprite) no-repeat -64px -55px;
+	width		: 64px;
+	height      : 51px;	
+//  ------------+
+}
+	
+/*
+--------------------------------------------------------------------------------
+SEARCH BAR STYLES
+--------------------------------------------------------------------------------
+*/
+#searchBlock 
+{
+//  ------------+
+    width       : auto;
+    display     : inline-block;
+	position    : relative;
+    height      : @mainMenuHeight;
+    top         : 3px;
+//  ------------+
+}
+
+#searchForm fieldset 
+{
+//  ------------+
+    width       : auto;
+    position    : relative;
+    display     : block;
+    border      : none;
+    padding     : 0;
+    margin      : 0;
+    height      : @mainMenuHeight;
+//  ------------+
+}
+
+div.input 
+{
+//  ------------+
+    margin-top  : 10px;
+    padding     : 5px 8px 7px 10px;
+    float        : right;
+    background  : url(@searchFieldSprite) repeat-x 0 -135px;
+    width       : 100px;
+    height      : 29px;
+//  ------------+
+}
+
+div.input.focus 
+{
+       // border:1px solid #9ecbe2;
+       // box-shadow:0 0 6px #abdcff, inset 0 1px 2px rgba(0,0,0,0.08);
+}
+
+input#s 
+{
+//  ------------+
+    width       : 100%;
+    border      : none;
+    background  : transparent;
+    height      : 16px;
+    color       : #b4bdc4;
+    text-shadow : 0 1px 1px #fff;
+//  ------------+
+}
+
+input#s:focus 
+{
+//  ------------+
+    outline     : none;
+//  ------------+
+}
+
+input#searchClear 
+{
+//  ------------+
+    margin      : 0px;
+    padding     : 0px;
+    overflow 	: hidden;
+    border   	: none;
+    background  : url(@searchFieldSprite) no-repeat 0 0;
+	width		: 21px;
+	height		: 21px;
+    position    : absolute;
+	top			: 14px;
+	right		: 6px;
+    z-index		: 5;
+    display     : none;
+    cursor      : pointer;
+    outline     : none;
+//  ------------+    
+}
+
+.leftRoundCorner
+{
+//  ------------+
+	background  : url(@searchFieldSprite) no-repeat 0 -104px;
+	width		: 21px;
+	height		: 29px;
+	position    : relative;
+	display     : block;
+	float       : right;
+	margin-top  : 10px;
+//  ------------+
+
+}	
+
+.rightRoundCorner
+{
+//  ------------+
+	background  : url(@searchFieldSprite) no-repeat 0 -73px;
+	width		: 21px;
+	height		: 29px;
+	position    : relative;
+	display     : block;
+	float        : right;
+	margin-top  : 10px;
+//  ------------+
+}
+
+.searchIcon
+{
+//  ------------+
+	background  : url(@searchFieldSprite) no-repeat 0 -46px;
+	width		: 21px;
+	height		: 21px;
+	position    : absolute;
+	top			: 14px;
+	left		: 6px;
+//  ------------+
+}
+// ----------------------------------------------------------------------------
